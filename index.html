@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moje projekty</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 18px;
+            line-height: 1.55;
+            color: #22262b;
+            background: #eef1f4;
+        }
+
+        a { color: inherit; }
+
+        .wrap {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        header {
+            border-bottom: 2px solid #22262b;
+        }
+
+        header .wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 22px;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 32px;
+        }
+
+        nav a {
+            text-decoration: none;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav a:hover,
+        nav a:focus-visible {
+            border-bottom-color: #22262b;
+            outline: none;
+        }
+
+        .menu-btn {
+            display: none;
+            background: none;
+            border: 2px solid #22262b;
+            font: inherit;
+            padding: 6px 12px;
+            cursor: pointer;
+        }
+
+        .hero {
+            padding: 64px 0 40px;
+        }
+
+        .hero h1 {
+            font-weight: normal;
+            font-size: 44px;
+            line-height: 1.1;
+            margin: 0 0 12px;
+        }
+
+        .hero p {
+            margin: 0;
+            max-width: 52ch;
+            color: #5b636c;
+        }
+
+        .projects {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 64px;
+            border-top: 2px solid #22262b;
+        }
+
+        .projects li { border-bottom: 1px solid #c9ced4; }
+
+        .projects a {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: baseline;
+            gap: 24px;
+            padding: 18px 8px;
+            text-decoration: none;
+        }
+
+        .projects a:hover,
+        .projects a:focus-visible {
+            background: #ffffff;
+            outline: none;
+        }
+
+        .projects .name { font-size: 24px; }
+
+        .projects .desc {
+            display: block;
+            font-size: 16px;
+            color: #5b636c;
+            margin-top: 2px;
+        }
+
+        .projects .tag {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            color: #5b636c;
+            white-space: nowrap;
+        }
+
+        footer {
+            border-top: 2px solid #22262b;
+            padding: 28px 0;
+            font-size: 15px;
+            color: #5b636c;
+        }
+
+        @media (max-width: 640px) {
+            .menu-btn { display: block; }
+
+            nav {
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                background: #eef1f4;
+                border-bottom: 2px solid #22262b;
+                display: none;
+            }
+
+            nav.open { display: block; }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0;
+                padding: 8px 24px 16px;
+            }
+
+            nav a { display: block; padding: 12px 0; }
+
+            .hero h1 { font-size: 34px; }
+            .projects a { grid-template-columns: 1fr; gap: 6px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="wrap">
+            <a class="logo" href="#">Moje projekty</a>
+
+            <button class="menu-btn" aria-label="Otevřít menu" onclick="document.querySelector('nav').classList.toggle('open')">Menu</button>
+
+            <nav>
+                <ul>
+                    <li><a href="">Projekt 1</a></li>
+                    <li><a href="">Projekt 2</a></li>
+                    <li><a href="">Projekt 3</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="wrap">
+
+        <div class="hero">
+            <h1>David Mezírek</h1>
+            <p>Navigace na věci, které jsem dělal. Kliknutím se dostanete přímo na projekt.</p>
+        </div>
+
+        <ul class="projects">
+
+            <li>
+                <a href="">
+                    <span>
+                        <span class="name">Projekt 1</span>
+                        <span class="desc">Zde bude něco.</span>
+                    </span>
+                    <span class="tag">2026</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="">
+                    <span>
+                        <span class="name">Projekt 2</span>
+                        <span class="desc">Zde bude taky něco.</span>
+                    </span>
+                    <span class="tag">2026</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="">
+                    <span>
+                        <span class="name">Projekt 3</span>
+                        <span class="desc">A zde bude taky něco.</span>
+                    </span>
+                    <span class="tag">2026</span>
+                </a>
+            </li>
+
+        </ul>
+
+    </main>
+
+    <footer>
+    <div class="wrap">
+        mezireda25@zaci.spse.cz
+    </div>
+</footer>
+
+</body>
+</html>
